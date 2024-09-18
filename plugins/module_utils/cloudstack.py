@@ -132,7 +132,7 @@ class AnsibleCloudStack:
             'api_timeout': int(api_config['timeout']),
             'api_http_method': api_config['method'],
             'api_verify_ssl_cert': api_config['verify'],
-            'validate_certs': api_config['dangerous_no_tls_verify'],
+            'validate_certs': not api_config['dangerous_no_tls_verify'],
         })
         return api_config
 
