@@ -213,6 +213,12 @@ options:
     type: list
     elements: dict
     aliases: [ tag ]
+  os_type:
+    description:
+      - Os Type to be associated on vm.
+      - Used on Update instacne, when you want to override os type provided by template/import.
+    type: str
+    version_added: 2.6.0
   poll_async:
     description:
       - Poll async jobs until job has finished.
@@ -1165,6 +1171,7 @@ def main():
             details=dict(type="dict"),
             poll_async=dict(type="bool", default=True),
             allow_root_disk_shrink=dict(type="bool", default=False),
+            os_type=dict(type="str"),
         )
     )
 
